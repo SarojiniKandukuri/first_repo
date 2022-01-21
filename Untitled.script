@@ -1,0 +1,23 @@
+﻿set ScreenSize to the screensize of connectioninfo()
+
+set the searchrectangle to [0,0.5* item 2 of ScreenSize,item 1 of screensize,item 2 of screensize]
+wait 5
+
+params TLx,TLy,BRx,BRy -- Values are between 0 and 1 and represent the proportion you want to go in the x and y direction for the top left and bottom right coordinates.
+
+set the searchrectangle to [TLx * ConnectionInfo().ScreenSize.x,TLy * ConnectionInfo().ScreenSize.y, BRx * ConnectionInfo().ScreenSize.x, BRy * ConnectionInfo().ScreenSize.y]
+
+set DeviceName to the name of connectioninfo()
+set DeviceDPI to {"Galaxy_S20_11":"577"}
+
+set the readTextSettings to {DPI:DeviceDPI.(DeviceName)}
+
+
+set the InitialSuites to []
+
+
+put 20 the asTextLimit of var
+
+set the asTextLimit to 5
+put "asdfweerewrwe" into var
+log var

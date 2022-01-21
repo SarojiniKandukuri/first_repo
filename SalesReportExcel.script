@@ -1,0 +1,15 @@
+﻿typetext windowsKey,"r",return
+typetext "Chrome",return
+typetext "https://exceldatapro.com/templates/sales-marketing/",return
+set the SearchRectangle to searchScreen.ScreenPart("TopHalf")
+repeat until ImageFound(text:"Download Consolidated Annual Sales Report", waitFor:10)
+	ScrollWheelDown 5
+end repeat
+click text:"Download Consolidated Annual Sales Report",waitFor:20
+set the SearchRectangle to []
+if imageFound(text:"SALES & MARKETING TEMPLATES",caseSensitive:on,waitFor:10,SearchRectangle:searchScreen.ScreenPart("LeftHalf"))
+	repeat until imageFound(text:"Click here to download the Consolidated",waitFor:10)
+		ScrollWheelDown 5
+	end repeat
+	click text:"Click here to download the Consolidated",waitFor:10
+end if

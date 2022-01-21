@@ -1,0 +1,3 @@
+﻿set myExcelDB to {type: "excel", file: "C:\Users\admin\Desktop\FinancialStatus_Practice.xlsx"}
+put the records of myExcelDB into states 
+put states joined by return 
